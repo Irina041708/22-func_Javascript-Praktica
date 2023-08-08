@@ -8,33 +8,23 @@
 // console.log(targetElement);
 // ---------------
 
-function findElementByClass(rootElement, nameClass) {
-    constructor(){
+// В качестве результата getElementById возвращает объект класса
+//  HTMLElement или значение null, если элемент не был найден.
+//   Этот метод имеется только у объекта document.
 
-    };
+const rootElement = document.getElementById('root');//в методе getElementById 
+// в качестве аргумента указываем строку со 
+// значением атрибута id и на выходе получаем ссылку на этот элемент.
+console.log(rootElement);
+
+// console.log(document.getElementById('root').getElementsByClassName('my-class')[0]);
+
+function findElementByClass(rootElement, nameClass) {
+    if (rootElement) {
+        return document.getElementsByClassName(nameClass)[0];
+    }
 }
 
-const rootElement = document.getElementById('root');
-
 const targetElement = findElementByClass(rootElement, 'my-class');
-
 console.log(targetElement);
 
-// {
-//     tag: 'div',
-//     class: 'product',
-//     {
-//         tag: 'img',
-//         class: 'product_img',
-//         src:'photo.png',
-//     }
-// }
-
-// DOM (Document Object Model) - это объектная модель документа, которая представляет 
-// структуру HTML или XML документа в виде иерархической структуры объектов. DOM позволяет 
-// программистам изменять содержимое и стиль веб-страницы с помощью JavaScript.
-
-// DOM состоит из объектов, которые могут быть обращены и изменены с помощью JavaScript.
-//  Объекты DOM связаны друг с другом и образуют иерархическое дерево. Каждый элемент 
-//  HTML-страницы представлен объектом в DOM. DOM-дерево состоит из объектов элементов,
-//   которые могут иметь дочерние элементы, атрибуты, стили и события.

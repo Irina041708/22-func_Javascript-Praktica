@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="product">
-        <img src="" alt="product_img">
-        <div class="product_content">
-            <h3 class="product_name"></h3>
-            <p class="product_text"></p>
+    <div id="root">
+        <p>Текст внутри блока-"root"
+        <div class="my-class">
+            <p>Текст внутри блока-"root"->"my-class"
+        </div>
+
+        <div class="my-class">
+            <div class="my-class">
+                <p>Текст внутри блока "root"->"my-class" ->"my-class"
+            </div>
+        </div>
+    </div>
+    <div id="root2">
+        <p>Текст внутри блока-"root2"
+        <div class="my-class">
+            <p>Текст внутри блока-"root2"->"my-class"
+        </div>
+
+        <div class="my-class">
+            <div class="my-class">
+                <p>Текст внутри блока "root2"->"my-class" ->"my-class"
+            </div>
         </div>
     </div>
     <!-- <script src="script1.js"></script> -->
-    <script src="script2.js"></script>
-    <!-- <script src="script3.js"></script> -->
+    <!-- <script src="script2.js"></script> -->
+    <script src="script3.js"></script>
 
 </body>
+
 </html>

@@ -6,26 +6,23 @@
 // Метод getTotalPrice() - возвращает общую стоимость заказа, основанную на ценах продуктов.
 // ----------------------
 // Пример использования класса
+class Order {
+    constructor(orderNumber) {
+        this.orderNumber = orderNumber;
+    }
+    products = [];
+    addProduct(product) {
+        this.products.push(product);
+    }
+    getTotalPrice() {
+        return this.products.reduce((acc, number) => acc + number.price, 0);
+    }
+}
+
 class Product {
     constructor(name, price) {
         this.name = name;
         this.price = price;
-    }
-}
-
-class Order extends Product {
-    constructor(orderNumber) {
-        super(Product);
-        this.orderNumber = orderNumber;
-        this.products = [];
-    }
-    addProduct(Product) {
-        this.products.push(Product);
-        // console.log(this.products);
-    }
-    getTotalPrice() {
-        return this.products.reduce((acc, number) => acc + number.price, 0);
-        // return this.products.map(element => element.price).reduce((a, b) => a + b, 0);
     }
 }
 
@@ -36,7 +33,5 @@ order.addProduct(product1);
 
 const product2 = new Product("Headphones", 100);
 order.addProduct(product2);
-
-console.log(order.products);
 
 console.log(order.getTotalPrice()); // Вывод: 600

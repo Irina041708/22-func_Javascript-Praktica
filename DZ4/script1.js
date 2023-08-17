@@ -17,17 +17,29 @@
 // -----------------------
 // https://reqres.in/api-docs/
 // -----------------------
+// 1. Если используете await, то then уже не стоит использовать.
+// return await resp.json()
+// .then(res => res.data);
+// лучше записать:
 
+// const result = await resp.json();
+// return result.data;
+// В 30 строке не будет response, fetch не кидает ошибку, если
+//  у нас статус был не двухсотый, ошибка будет, если мы вовсе не сможем сделать запрос.
+// 2. Отлично сделали, в 50 строке тоже стоит от then избавиться.
+// -------------
 
 async function getUserData(id) {
     try {
         const resp = await fetch(`https://reqres.in/api/users/${id}`);
         if (resp.ok) {
-            return await resp.json()
-            .then(res => res.data);
+            const result = await resp.json();
+            return result.data;
+            // return await resp.json()
+            // .then(res => res.data);
         }
     } catch (error) {
-        console.log(`${response.status}`);
+        console.log(`${error}`);
     }
 }
 console.log(getUserData(2));

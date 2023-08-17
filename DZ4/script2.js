@@ -47,11 +47,12 @@ async function saveUserData(data) {
     });
     if (resp.ok) {
       console.log("Данные успешно сохранены");
-      return await resp.json().then((res) => res.data);
+      const result = await resp.json();
+      return result.data;
+      // return await resp.json().then((res) => res.data);
     }
   } catch (error) {
     console.log(`${error.message}`);
   }
 }
 saveUserData(user);
-
